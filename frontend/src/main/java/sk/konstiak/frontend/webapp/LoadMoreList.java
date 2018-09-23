@@ -39,6 +39,7 @@ public class LoadMoreList<T> extends VerticalLayout {
                     .collect(Collectors.toList());
 
             addToList(nextPage);
+            refreshLoadMoreButton();
         };
     }
 
@@ -60,8 +61,18 @@ public class LoadMoreList<T> extends VerticalLayout {
     }
 
     private void refreshLoadMoreButton() {
-        if (getDisplayedSize() < getAvailableItemsCount() && !loadMoreButton.isEnabled()) {
-            this.getUI().ifPresent(ui -> ui.access(() -> loadMoreButton.setEnabled(true)));
+        int moreAvailable = getAvailableItemsCount() - getDisplayedSize();
+
+        if (moreAvailable > 0) {
+            String buttonLabel = String.format("Load (%d) more", moreAvailable);
+            this.getUI().ifPresent(ui -> ui.access(() -> loadMoreButton.setText(buttonLabel)));
+
+            if (!loadMoreButton.isEnabled()) {
+                this.getUI().ifPresent(ui -> ui.access(() -> loadMoreButton.setEnabled(true)));
+            }
+        } else {
+            loadMoreButton.setText("Load more");
+            loadMoreButton.setEnabled(false);
         }
     }
 
