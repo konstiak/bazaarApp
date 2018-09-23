@@ -3,12 +3,11 @@ package sk.konstiak.frontend.webapp;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
-import sk.konstiak.model.Advertisement;
 
 import java.util.function.Consumer;
 
 @Service
-public class ListingService {
+public class ListingService<T> {
 
     private final TaskExecutor taskExecutor;
 
@@ -16,11 +15,11 @@ public class ListingService {
         this.taskExecutor = taskExecutor;
     }
 
-    public void retrieveAdvertisements(Flux<Advertisement> advertisementFlux,
-                                       Consumer<Advertisement> newAdvertisementFound,
-                                       Runnable searchingFinished) {
+    public void retrieveItems(Flux<T> itemFlux,
+                              Consumer<T> nextItem,
+                              Runnable searchingFinished) {
         taskExecutor.execute(() -> {
-            advertisementFlux.subscribe(newAdvertisementFound);
+            itemFlux.subscribe(nextItem);
             searchingFinished.run();
         });
     }
