@@ -21,6 +21,7 @@
         <module>frontend</module>
         <module>model</module>
         <module>crawler-api</module>
+        <module>frontend-ng</module>
     </modules>
 
     <properties>

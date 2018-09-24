@@ -15,7 +15,7 @@ public class ModryKonikCrawler extends BazaarCrawler {
 
     private static final Logger logger = LoggerFactory.getLogger(ModryKonikCrawler.class);
 
-    @Value("${crawler.modrykonik.url:https://www.modrykonik.sk/market/}")
+    @Value("${crawler.modrykonik.url:https://www.modrykonik.sk/market/?}")
     private String baseUrl;
 
     @Autowired
@@ -31,7 +31,10 @@ public class ModryKonikCrawler extends BazaarCrawler {
     @Override
     protected String getSimpleSearchUrl(String searchString) {
         try {
-            return String.join("?q=", baseUrl, URLEncoder.encode(searchString, "UTF-8"));
+            return String.join("&",
+                    baseUrl,
+                    "q=" + URLEncoder.encode(searchString, "UTF-8"),
+                    "quality=old");
         } catch (UnsupportedEncodingException e) {
             logger.error("Search string is not valid.");
         }
