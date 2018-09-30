@@ -1,4 +1,4 @@
-package sk.konstiak.frontend.webapp;
+package sk.konstiak.frontend.frontendvaadin;
 
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Service;

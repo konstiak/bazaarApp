@@ -1,4 +1,4 @@
-package sk.konstiak.frontend.webapp;
+package sk.konstiak.frontend.frontendvaadin;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;

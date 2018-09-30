@@ -1,4 +1,4 @@
-package sk.konstiak.frontendng;
+package sk.konstiak.frontend.frontendng.server;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

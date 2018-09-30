@@ -1,4 +1,4 @@
-package sk.konstiak.frontend.webapp;
+package sk.konstiak.frontend.frontendvaadin;
 
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.function.SerializableFunction;

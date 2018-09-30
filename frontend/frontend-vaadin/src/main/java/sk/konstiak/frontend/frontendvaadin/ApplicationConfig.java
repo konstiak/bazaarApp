@@ -1,4 +1,4 @@
-package sk.konstiak.frontend.webapp;
+package sk.konstiak.frontend.frontendvaadin;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
