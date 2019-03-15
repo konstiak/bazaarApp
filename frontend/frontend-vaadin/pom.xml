@@ -51,7 +51,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring</artifactId>
-            <version>${vaadin.version}</version>
+            <version>${vaadin-spring.version}</version>
         </dependency>
 
         <dependency>
@@ -77,7 +77,7 @@
         <dependency>
             <groupId>org.vaadin.artur</groupId>
             <artifactId>spring-data-provider</artifactId>
-            <version>1.1.0</version>
+            <version>${spring-data-provider.version}</version>
         </dependency>
     </dependencies>
 
